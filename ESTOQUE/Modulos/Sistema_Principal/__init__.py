@@ -1,5 +1,6 @@
 def menu():
-    from Modulo import Produtos, Login_Usuário
+    from Modulos import Produtos, Login_Usuário, Analisar_dados
+    import time
     # IMPORTAÇÕES - PRONTO
     Login_Usuário.prgt_usuário()
     print("\033[92m=" * 40)
@@ -42,3 +43,21 @@ def menu():
             print("-" * 40)
             Produtos.cdst_produto()
         # OPÇÃO 2 - PRONTO
+        if usuario == 3:
+            print("-" * 40)
+            p = "ANALISANDO O GRÁFICO"
+            print(f"{p:^40}")
+            print("-" * 40)
+            Analisar_dados.grafico()
+        # OPÇÃO 3 - PRONTO
+        if usuario == 4:
+            time.sleep(1)
+            print("=" * 40)
+            p = "\033[37mSAINDO DO SISTEMA\033[0m"
+            print(f"{p:^40}")
+            print("=" * 40)
+            time.sleep(2)
+            print("\033[31mPROGRAMA FINALIZADO...\033[0m")
+            break
+        if usuario == 4:
+            break

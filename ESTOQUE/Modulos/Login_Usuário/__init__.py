@@ -2,7 +2,7 @@ def prgt_usuário():
     while True:
         import pandas as pd
         # IMPORTAÇÕES - PRONTO
-        arquivo = "ESTOQUE/Modulo/Login_Usuário/Cadastro de Usuário.csv"
+        arquivo = "ESTOQUE/Modulos/Login_Usuário/Cadastro de Usuário.csv"
         df = pd.read_csv(arquivo)
         numeros_linhas = len(df)
         pgnt_usuário = str(input("Você Possui Cadastro Na Plataforma (SIM/NÃO): ")).strip().upper()
@@ -35,7 +35,7 @@ def cdst_usuário():
     # CABEÇALHO - PRONTO
     import pandas as pd
     # IMPORTAÇÕES - PRONTO
-    arquivo = "ESTOQUE/Modulo/Login_Usuário/Cadastro de Usuário.csv"
+    arquivo = "ESTOQUE/Modulos/Login_Usuário/Cadastro de Usuário.csv"
     df = pd.read_csv(arquivo)
     numeros_linhas = len(df)
     gerando_id = numeros_linhas + 1
@@ -79,13 +79,13 @@ def cdst_usuário():
             print("\033[31mErro: As Senhas Estão Diferentes!\033[0m")
     # SENHA - PRONTO
     adicionar_dados = f"{id_adicionar},{nome_adicionar},{email_adicionar},{senha_adicionar}\n"
-    nome_arquivo = "ESTOQUE/Modulo/Login_Usuário/Cadastro de Usuário.csv"
+    nome_arquivo = "ESTOQUE/Modulos/Login_Usuário/Cadastro de Usuário.csv"
     with open(nome_arquivo, mode='a') as arquivo:
         arquivo.write(adicionar_dados)
     # ADICIONAR DADOS - PRONTO
     linha = "=" * 80
     adicionar = f'{linha}'
-    nome_arquivo = "ESTOQUE/Modulo/Login_Usuário/Cadastro de Usuário.csv"
+    nome_arquivo = "ESTOQUE/Modulos/Login_Usuário/Cadastro de Usuário.csv"
     with open(nome_arquivo, mode='a') as arquivo:
         arquivo.write(adicionar)
     # LINHA - PRONTO
@@ -93,7 +93,7 @@ def cdst_usuário():
 
 def verificar_login(login):
     import pandas as pd
-    arquivo_excel = "ESTOQUE/Modulo/Login_Usuário/Cadastro de Usuário.csv"
+    arquivo_excel = "ESTOQUE/Modulos/Login_Usuário/Cadastro de Usuário.csv"
     df = pd.read_csv(arquivo_excel)
     # ACHAR ARQUIVO - PRONTO
     valor_celula_numero_acesso = df.at[0, "ID"]
