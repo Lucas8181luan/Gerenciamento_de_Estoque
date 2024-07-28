@@ -2,7 +2,7 @@ from Modulos import Linhas
 
 def ver_arquivos():
     import pandas as pd
-    df = pd.read_csv("ESTOQUE/Modulos/Produtos/produtos.csv")
+    df = pd.read_csv("ESTOQUE/Modulos/Banco de Dados/produtos.csv")
     df_sem_numeros = df.select_dtypes(include=['object'])
     print(df_sem_numeros)
 
@@ -10,7 +10,7 @@ def ver_arquivos():
 def cdst_produto():
     import pandas as pd
     # IMPORTAÇÕES - PRONTO
-    arquivo = "ESTOQUE/Modulos/Produtos/produtos.csv"
+    arquivo = "ESTOQUE/Modulos/Banco de Dados/produtos.csv"
     df = pd.read_csv(arquivo)
     numeros_linhas = len(df)
     gerando_id = numeros_linhas + 1
@@ -38,7 +38,7 @@ def cdst_produto():
             print("\033[31mErro: Digite o Preço Em Números Validos!\033[0m")
     # PREÇO PRODUTO - PRONTO
     adicionar = f'{id_produto},{nome_produto},{desc_produto},{qntd_produto},{usuario_valor_convertido}\n'
-    nome_arquivo = "ESTOQUE/Modulos/Produtos/produtos.csv"
+    nome_arquivo = "ESTOQUE/Modulos/Banco de Dados/produtos.csv"
     with open(nome_arquivo, mode='a') as arquivo:
         arquivo.write(adicionar)
     Linhas.linha_verde()

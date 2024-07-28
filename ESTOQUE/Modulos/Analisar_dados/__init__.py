@@ -2,7 +2,7 @@ def grafico():
     import pandas as pd
     import matplotlib.pyplot as plt
     # IMPOTAÇÕES - PRONTO
-    arquivo = "ESTOQUE/Modulos/Produtos/produtos.csv"
+    arquivo = "ESTOQUE/Modulos/Banco de Dados/produtos.csv"
     df = pd.read_csv(arquivo)
     numeros_linhas = len(df)
     ids = []
