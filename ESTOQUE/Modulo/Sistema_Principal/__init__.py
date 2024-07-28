@@ -29,7 +29,7 @@ def menu():
                 print("\033[31mErro: Escolha uma opção valida!\033[0m")
             else:
                 print("\033[31mErro: Escolha um número valido!\033[0m")
-        # USUARIO - PRONTO
+        # OPÇÕES ESCOLHIDAS - PRONTO
         if usuario == 1:
             print("=" * 100)
             Produtos.ver_arquivos()
