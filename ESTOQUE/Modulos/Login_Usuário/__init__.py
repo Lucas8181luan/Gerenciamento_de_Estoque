@@ -1,18 +1,27 @@
+import pandas as pd
+from Modulos import Linhas
+# IMPORTAÇÕES - PRONTO
+
 def prgt_usuário():
+    import pandas as pd
+    from Modulos import Linhas
+    # IMPORTAÇÕES - PRONTO
     while True:
-        import pandas as pd
-        # IMPORTAÇÕES - PRONTO
         arquivo = "ESTOQUE/Modulos/Login_Usuário/Cadastro de Usuário.csv"
         df = pd.read_csv(arquivo)
         numeros_linhas = len(df)
-        pgnt_usuário = str(input("Você Possui Cadastro Na Plataforma (SIM/NÃO): ")).strip().upper()
-        if pgnt_usuário == "SIM":
+        pgnt_usuário = str(input("Você Possui Cadastro Na Plataforma (SIM/NÃO): ")).strip().upper()[0]
+        if pgnt_usuário == "S":
             while True:
-                print("-" * 40)
-                numero_acesso = str(input("Seu Número de Acesso: "))
-                nome = str(input("Seu Nome de Usuário: "))
-                email = str(input("Digite Seu E-mail: "))
-                senha = str(input("Digite Sua Senha: "))
+                Linhas.linha_azul()
+                numero_acesso = str(input("\033[36mSeu Número de Acesso: \033[0m"))
+                Linhas.linha_azul()
+                nome = str(input("\033[36mSeu Nome de Usuário: \033[0m"))
+                Linhas.linha_azul()
+                email = str(input("\033[36mDigite Seu E-mail: \033[0m"))
+                Linhas.linha_azul()
+                senha = str(input("\033[36mDigite Sua Senha: \033[0m"))
+                Linhas.linha_azul()
                 junta = numero_acesso + nome + email + senha
                 verificando_login = verificar_login(junta)
                 if verificando_login == True:
@@ -28,10 +37,10 @@ def prgt_usuário():
             
 
 def cdst_usuário():
-    print("=" * 40)
-    p = "CADASTRAMENTO DE USUÁRIO"
-    print(f"{p:^40}")
-    print("=" * 40)
+    Linhas.linha_verde()
+    p = "\033[32mCADASTRAMENTO DE USUÁRIO\033[0m"
+    print(f"{p:^100}")
+    Linhas.linha_verde()
     # CABEÇALHO - PRONTO
     import pandas as pd
     # IMPORTAÇÕES - PRONTO
@@ -40,43 +49,45 @@ def cdst_usuário():
     numeros_linhas = len(df)
     gerando_id = numeros_linhas + 1
     id_adicionar = gerando_id
-    print("-" * 40)
-    print(f"Guarde seu número de acesso = ",end="")
+    Linhas.linha_amarela()
+    print(f"\033[33mGuarde seu número de acesso = \033[0m",end="")
     print(f"\033[92m{id_adicionar}\033[0m")
-    print("-" * 40)
+    Linhas.linha_amarela()
     # ID - PRONTO
-    print("-" * 40)
-    p = "NOME USUÁRIO"
-    print(f"{p:^40}")
-    print("-" * 40)
-    nome_usuário = str(input("Seu Nome: "))
+    Linhas.linha_amarela()
+    p = "\033[33mNOME USUÁRIO\033[0m"
+    print(f"{p:^100}")
+    Linhas.linha_amarela()
+    nome_usuário = str(input("\033[33mSeu Nome: \033[0m"))
     nome_adicionar = nome_usuário
     # NOME - PRONTO
-    print("-" * 40)
-    p = "CADASTRA E-MAIL"
-    print(f"{p:^40}")
-    print("-" * 40)
+    Linhas.linha_amarela()
+    p = "\033[33mCADASTRA E-MAIL\033[0m"
+    print(f"{p:^100}")
+    Linhas.linha_amarela()
     while True:
-        email = str(input("Digite um E-mail: "))
-        email_dn = str(input("Digite o E-mail novamente: "))
+        email = str(input("\033[33mDigite um E-mail: \033[0m"))
+        email_dn = str(input("\033[33mDigite o E-mail novamente: \033[0m"))
         if email == email_dn:
             email_adicionar = email
             break
         else:
             print("\033[31mErro: Os E-mail Estão Diferentes!\033[0m")
+            Linhas.linha_amarela()
     # E-MAIL - PRONTO
-    print("-" * 40)
-    p = "CADASTRA SENHA"
-    print(f"{p:^40}")
-    print("-" * 40)
+    Linhas.linha_amarela()
+    p = "\033[33mCADASTRA SENHA\033[0m"
+    print(f"{p:^100}")
+    Linhas.linha_amarela()
     while True:
-        senha = str(input('Digite uma Senha: '))
-        senha_dn = str(input("Digite a Senha novamente: "))
+        senha = str(input("\033[33mDigite uma Senha: \033[0m"))
+        senha_dn = str(input("\033[33mDigite a Senha novamente: \033[0m"))
         if senha == senha_dn:
             senha_adicionar = senha
             break
         else:
             print("\033[31mErro: As Senhas Estão Diferentes!\033[0m")
+            Linhas.linha_amarela()
     # SENHA - PRONTO
     adicionar_dados = f"{id_adicionar},{nome_adicionar},{email_adicionar},{senha_adicionar}\n"
     nome_arquivo = "ESTOQUE/Modulos/Login_Usuário/Cadastro de Usuário.csv"
@@ -89,6 +100,10 @@ def cdst_usuário():
     with open(nome_arquivo, mode='a') as arquivo:
         arquivo.write(adicionar)
     # LINHA - PRONTO
+    Linhas.linha_verde()
+    p = "\033[32mCADASTRAMENTO REALIZADO COM SUCESSO!\033[0m"
+    print(f"{p:^100}")
+    Linhas.linha_verde()
 
 
 def verificar_login(login):

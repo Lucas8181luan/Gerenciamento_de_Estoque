@@ -1,7 +1,10 @@
+from Modulos import Linhas
+
 def ver_arquivos():
     import pandas as pd
-    ler = pd.read_csv("ESTOQUE/Modulos/Produtos/produtos.csv")
-    print(ler.head())
+    df = pd.read_csv("ESTOQUE/Modulos/Produtos/produtos.csv")
+    df_sem_numeros = df.select_dtypes(include=['object'])
+    print(df_sem_numeros)
 
 
 def cdst_produto():
@@ -13,13 +16,13 @@ def cdst_produto():
     gerando_id = numeros_linhas + 1
     id_produto = gerando_id
     # ID - PRODUTO
-    nome_produto = str(input("Nome do Produto: "))
+    nome_produto = str(input("\033[36mNome do Produto: \033[0m"))
     # NOME PRODUTO - PRONTO
-    desc_produto = str(input("Descrição do Produro: "))
+    desc_produto = str(input("\033[36mDescrição do Produro: \033[0m"))
     # DESCRIÇÃO PRODUTO - PRONTO
     while True:
         try:
-            qntd_produto = int(input("Quantidade do Produto: "))
+            qntd_produto = int(input("\033[36mQuantidade do Produto: \033[0m"))
             if isinstance(qntd_produto, int):
                 break
         except ValueError:
@@ -27,7 +30,7 @@ def cdst_produto():
     # QUANTIDADE PRODUTO - PRONTO
     while True:
         try:
-            usuario_valor = str(input("Preço do Produto:R$"))
+            usuario_valor = str(input("\033[36mPreço do Produto:\033[0mR$"))
             usuario_valor_convertido = float(usuario_valor.replace(',', '.'))
             if isinstance(usuario_valor_convertido, float):
                 break
@@ -38,7 +41,8 @@ def cdst_produto():
     nome_arquivo = "ESTOQUE/Modulos/Produtos/produtos.csv"
     with open(nome_arquivo, mode='a') as arquivo:
         arquivo.write(adicionar)
-    print("-" * 40)
-    print("\033[92mProduto Cadastrado Com Sucesso!\033[0m")
-    print("-" * 40)
+    Linhas.linha_verde()
+    p = "\033[92mProduto Cadastrado Com Sucesso!\033[0m"
+    print(f"{p:^100}")
+    Linhas.linha_verde()
     # ADICIONAR PRODUTO - PRONTO

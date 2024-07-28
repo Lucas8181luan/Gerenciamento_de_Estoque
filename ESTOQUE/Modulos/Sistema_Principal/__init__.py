@@ -1,25 +1,25 @@
 def menu():
-    from Modulos import Produtos, Login_Usuário, Analisar_dados
+    from Modulos import Produtos, Login_Usuário, Analisar_dados, Linhas
     import time
     # IMPORTAÇÕES - PRONTO
     Login_Usuário.prgt_usuário()
-    print("\033[92m=" * 40)
-    p = "ACESSO LIBERADO"
-    print(f"{p:^40}")
-    print("=" * 40 + "\033[0m")
+    Linhas.linha_verde()
+    p = "\033[32mACESSO LIBERADO\033[0m"
+    print(f"{p:^100}")
+    Linhas.linha_verde()
     # LOGIN - PRONTO
     while True:
-        print("-" * 40)
+        Linhas.linha_azul()
         p = "MENU"
-        print(f"{p:^40}")
-        print("-" * 40)
+        print(f"\033[36m{p:^100}\033[0m")
+        Linhas.linha_azul()
         # CABEÇALHO - PRONTO
-        opções = ["Ver Estoque", "Cadastra Produto", "Analisar Quantidade", "Sair do Sistema"]
+        opções = ["Ver Produtos", "Cadastra Produto", "Analisar Estoque", "Sair do Sistema"]
         cont = 0
         for i in opções:
             cont += 1
-            print(f"{cont}º - {i}")
-        print("-" * 40)
+            print(f"\033[33m{cont}º - {i}\033[0m")
+        Linhas.linha_azul()
         # OPÇÕES - PRONTO
         while True:
             try:
@@ -32,30 +32,33 @@ def menu():
                 print("\033[31mErro: Escolha um número valido!\033[0m")
         # OPÇÕES ESCOLHIDAS - PRONTO
         if usuario == 1:
-            print("=" * 100)
+            Linhas.linha_azul()
+            p = "\033[36mVer Produtos\033[0m"
+            print(f"{p:^100}")
+            Linhas.linha_azul()
             Produtos.ver_arquivos()
-            print("=" * 100)
+            Linhas.linha_azul()
         # OPÇÃO 1 - PRONTO
         if usuario == 2:
-            print("-" * 40)
-            p = "CADASTRA PRODUTO"
-            print(f"{p:^40}")
-            print("-" * 40)
+            Linhas.linha_azul()
+            p = "\033[36mCadastra Produto\033[0m"
+            print(f"{p:^100}")
+            Linhas.linha_azul()
             Produtos.cdst_produto()
         # OPÇÃO 2 - PRONTO
         if usuario == 3:
-            print("-" * 40)
-            p = "ANALISANDO O GRÁFICO"
-            print(f"{p:^40}")
-            print("-" * 40)
+            Linhas.linha_azul()
+            p = "\033[36mAnalisando Estoque\033[0m"
+            print(f"{p:^100}")
+            Linhas.linha_azul()
             Analisar_dados.grafico()
         # OPÇÃO 3 - PRONTO
         if usuario == 4:
             time.sleep(1)
-            print("=" * 40)
-            p = "\033[37mSAINDO DO SISTEMA\033[0m"
-            print(f"{p:^40}")
-            print("=" * 40)
+            Linhas.linha_verde()
+            p = "\033[32mSAINDO DO SISTEMA\033[0m"
+            print(f"{p:^100}")
+            Linhas.linha_verde()
             time.sleep(2)
             print("\033[31mPROGRAMA FINALIZADO...\033[0m")
             break
