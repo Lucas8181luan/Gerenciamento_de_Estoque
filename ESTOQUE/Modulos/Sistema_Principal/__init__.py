@@ -86,7 +86,7 @@ def menu():
             break
         if usuario == 7:
             break
-        # OPÇÃO 6 - PRONTO
+        # OPÇÃO 7 - PRONTO
     # MENU - PRONTO
 
 
