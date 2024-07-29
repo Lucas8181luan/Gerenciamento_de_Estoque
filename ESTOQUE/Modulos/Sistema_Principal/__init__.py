@@ -1,5 +1,5 @@
 def menu():
-    from Modulos import Produtos, Login_Usuário, Gráfico_de_dados, Funcionários, Reabastecimento
+    from Modulos import Produtos, Login_Usuário, Gráfico_de_dados, Funcionários, Reabastecimento, Suporte
     import time
     # IMPORTAÇÕES - PRONTO
     Login_Usuário.prgt_usuário()
@@ -14,7 +14,7 @@ def menu():
         print(f"\033[36m{p:^100}\033[0m")
         linha_azul()
         # CABEÇALHO - PRONTO
-        opções = ["Ver Produtos", "Cadastra Produto", "Analisar Estoque", "Ver Funcionários", "Reabastecimento", "Sair do Sistema"]
+        opções = ["Ver Produtos", "Cadastra Produto", "Analisar Estoque", "Ver Funcionários", "Reabastecimento", "Relata ao Suporte", "Sair do Sistema"]
         cont = 0
         for i in opções:
             cont += 1
@@ -24,7 +24,7 @@ def menu():
         while True:
             try:
                 usuario = int(input("Escolha Uma Opção: "))
-                if usuario == 1 or usuario == 2 or usuario == 3 or usuario == 4 or usuario == 5:
+                if usuario == 1 or usuario == 2 or usuario == 3 or usuario == 4 or usuario == 5 or usuario == 6 or usuario == 7:
                     break
             except ValueError:
                 print("\033[31mErro: Escolha uma opção valida!\033[0m")
@@ -66,18 +66,27 @@ def menu():
             print(f"{p:^100}")
             linha_azul()
             Reabastecimento.ver_reabastecimento()
+        # OPÇÃO 5 - PRONTO
         if usuario == 6:
+            linha_amarela()
+            p = "\033[33mRelata ao Suporte\033[0m"
+            print(f"{p:^100}")
+            linha_amarela()
+            Suporte.relata()
+            linha_amarela()
+        # OPÇÃO 6 - PRONTO
+        if usuario == 7:
             time.sleep(1)
             linha_vermelha()
-            p = "\033[31mSAINDO DO SISTEMA\033[0m"
+            p = "\033[31mFINALIZANDO PROGRAMA...\033[0m"
             print(f"{p:^100}")
             linha_vermelha()
             time.sleep(2)
-            print("\033[31mPROGRAMA FINALIZADO...\033[0m")
+            print("\033[31mVOLTE SEMPRE!\033[0m")
             break
-        if usuario == 6:
+        if usuario == 7:
             break
-        # OPÇÃO 5 - PRONTO
+        # OPÇÃO 6 - PRONTO
     # MENU - PRONTO
 
 
