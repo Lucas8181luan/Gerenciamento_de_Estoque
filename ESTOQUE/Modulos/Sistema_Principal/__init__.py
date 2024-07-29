@@ -1,5 +1,5 @@
 def menu():
-    from Modulos import Produtos, Login_Usuário, Analisar_dados
+    from Modulos import Produtos, Login_Usuário, Grafico_dados, Funcionários
     import time
     # IMPORTAÇÕES - PRONTO
     Login_Usuário.prgt_usuário()
@@ -14,7 +14,7 @@ def menu():
         print(f"\033[36m{p:^100}\033[0m")
         linha_azul()
         # CABEÇALHO - PRONTO
-        opções = ["Ver Produtos", "Cadastra Produto", "Analisar Estoque", "Sair do Sistema"]
+        opções = ["Ver Produtos", "Cadastra Produto", "Analisar Estoque", "Ver Funcionários", "Sair do Sistema"]
         cont = 0
         for i in opções:
             cont += 1
@@ -24,7 +24,7 @@ def menu():
         while True:
             try:
                 usuario = int(input("Escolha Uma Opção: "))
-                if usuario == 1 or usuario == 2 or usuario == 3 or usuario == 4:
+                if usuario == 1 or usuario == 2 or usuario == 3 or usuario == 4 or usuario == 5:
                     break
             except ValueError:
                 print("\033[31mErro: Escolha uma opção valida!\033[0m")
@@ -51,9 +51,16 @@ def menu():
             p = "\033[36mAnalisando Estoque\033[0m"
             print(f"{p:^100}")
             linha_azul()
-            Analisar_dados.grafico()
+            Grafico_dados.grafico()
         # OPÇÃO 3 - PRONTO
         if usuario == 4:
+            linha_azul()
+            p = "\033[36mVer Funcionários\033[0m"
+            print(f"{p:^100}")
+            linha_azul()
+            Funcionários.ver_funcionários()
+        # OPÇÃO 4 - PRONTO
+        if usuario == 5:
             time.sleep(1)
             linha_vermelha()
             p = "\033[31mSAINDO DO SISTEMA\033[0m"
@@ -62,8 +69,10 @@ def menu():
             time.sleep(2)
             print("\033[31mPROGRAMA FINALIZADO...\033[0m")
             break
-        if usuario == 4:
+        if usuario == 5:
             break
+        # OPÇÃO 5 - PRONTO
+    # MENU - PRONTO
 
 
 

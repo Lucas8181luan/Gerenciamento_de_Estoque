@@ -1,4 +1,3 @@
-
 ID,Nome,Descrição,Quantidade,Preço
 1,Teclado Mecânico,Teclado mecânico retroiluminado,50,150.00
 2,Mouse Óptico,Mouse óptico com ajuste de DPI,75,60.00
@@ -20,3 +19,4 @@ ID,Nome,Descrição,Quantidade,Preço
 18,Scanner Documentos,Scanner para documentos e fotos,18,450.00
 19,Microfone Condensador,Microfone condensador para gravação,25,150.00
 20,Alto-Falante Bluetooth,Alto-falante Bluetooth portátil,55,120.00
+21,Borracha,FabriCastelo,23,2.5

@@ -3,8 +3,7 @@ from Modulos import Sistema_Principal
 def ver_arquivos():
     import pandas as pd
     df = pd.read_csv("ESTOQUE/Modulos/Banco de Dados/produtos.csv")
-    df_sem_numeros = df.select_dtypes(include=['object'])
-    print(df_sem_numeros)
+    print(df.to_string(index=False))
 
 
 def cdst_produto():

@@ -7,7 +7,9 @@ def prgt_usuário():
         arquivo = "ESTOQUE/Modulos/Banco de Dados/Cadastro de Usuário.csv"
         df = pd.read_csv(arquivo)
         numeros_linhas = len(df)
-        pgnt_usuário = str(input("Você Possui Cadastro Na Plataforma (SIM/NÃO): ")).strip().upper()[0]
+        Sistema_Principal.linha_azul()
+        pgnt_usuário = str(input("\033[36mVocê Possui Cadastro Na Plataforma (SIM/NÃO): \033[0m")).strip().upper()[0]
+        Sistema_Principal.linha_azul()
         if pgnt_usuário == "S":
             if numeros_linhas < 1:
                 Sistema_Principal.linha_vermelha()
