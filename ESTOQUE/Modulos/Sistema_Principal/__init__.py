@@ -1,5 +1,5 @@
 def menu():
-    from Modulos import Produtos, Login_Usuário, Grafico_dados, Funcionários
+    from Modulos import Produtos, Login_Usuário, Gráfico_de_dados, Funcionários
     import time
     # IMPORTAÇÕES - PRONTO
     Login_Usuário.prgt_usuário()
@@ -51,7 +51,7 @@ def menu():
             p = "\033[36mAnalisando Estoque\033[0m"
             print(f"{p:^100}")
             linha_azul()
-            Grafico_dados.grafico()
+            Gráfico_de_dados.grafico()
         # OPÇÃO 3 - PRONTO
         if usuario == 4:
             linha_azul()
