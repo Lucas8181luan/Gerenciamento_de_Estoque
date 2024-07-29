@@ -1,5 +1,5 @@
 def menu():
-    from Modulos import Produtos, Login_Usuário, Gráfico_de_dados, Funcionários
+    from Modulos import Produtos, Login_Usuário, Gráfico_de_dados, Funcionários, Reabastecimento
     import time
     # IMPORTAÇÕES - PRONTO
     Login_Usuário.prgt_usuário()
@@ -14,7 +14,7 @@ def menu():
         print(f"\033[36m{p:^100}\033[0m")
         linha_azul()
         # CABEÇALHO - PRONTO
-        opções = ["Ver Produtos", "Cadastra Produto", "Analisar Estoque", "Ver Funcionários", "Sair do Sistema"]
+        opções = ["Ver Produtos", "Cadastra Produto", "Analisar Estoque", "Ver Funcionários", "Reabastecimento", "Sair do Sistema"]
         cont = 0
         for i in opções:
             cont += 1
@@ -61,6 +61,12 @@ def menu():
             Funcionários.ver_funcionários()
         # OPÇÃO 4 - PRONTO
         if usuario == 5:
+            linha_azul()
+            p = "\033[36mReabastecimento\033[0m"
+            print(f"{p:^100}")
+            linha_azul()
+            Reabastecimento.ver_reabastecimento()
+        if usuario == 6:
             time.sleep(1)
             linha_vermelha()
             p = "\033[31mSAINDO DO SISTEMA\033[0m"
@@ -69,7 +75,7 @@ def menu():
             time.sleep(2)
             print("\033[31mPROGRAMA FINALIZADO...\033[0m")
             break
-        if usuario == 5:
+        if usuario == 6:
             break
         # OPÇÃO 5 - PRONTO
     # MENU - PRONTO
