@@ -1,4 +1,4 @@
-from Modulos import Linhas
+from Modulos import Sistema_Principal
 
 def ver_arquivos():
     import pandas as pd
@@ -41,8 +41,8 @@ def cdst_produto():
     nome_arquivo = "ESTOQUE/Modulos/Banco de Dados/produtos.csv"
     with open(nome_arquivo, mode='a') as arquivo:
         arquivo.write(adicionar)
-    Linhas.linha_verde()
+    Sistema_Principal.linha_verde()
     p = "\033[92mProduto Cadastrado Com Sucesso!\033[0m"
     print(f"{p:^100}")
-    Linhas.linha_verde()
+    Sistema_Principal.linha_verde()
     # ADICIONAR PRODUTO - PRONTO
