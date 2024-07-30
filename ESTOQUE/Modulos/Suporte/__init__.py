@@ -3,7 +3,7 @@ def relata():
     from Modulos import Sistema_Principal
     # IMPORTAÇÕES - PRONTO
     relato_usuário = str(input("\033[31mRelate o Problema Que Está Tendo: \033[0m"))
-    linha = f"{"=" * 100}"
+    linha = f"{"=" * 100}\n"
     relatos = [relato_usuário]
     nome_arquivo = "ESTOQUE/Modulos/Banco de Dados/Relatos ao Suporte.csv"
     with open(nome_arquivo, mode='a', encoding='utf-8') as arquivo:
